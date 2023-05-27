@@ -1,0 +1,1 @@
+esta retornando um objeto vasio devido a resposta do '/stream' estar vasia

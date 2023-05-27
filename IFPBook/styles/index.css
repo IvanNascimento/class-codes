@@ -1,0 +1,29 @@
+body, div, span {
+  margin: 0px;
+  color: green;
+  font-family: 'Rubik', sans-serif;
+}
+
+span {
+  margin-right: 30px;
+}
+
+div {
+  background-color: #c4ffb2;
+  padding: 10px;
+}
+
+input {
+  border-color: green;
+}
+
+input[type="text"] {
+  border-style: dashed;
+}
+
+input[type="button"] {
+  background-color: green;
+  color: white;
+  padding: 3px;
+  border-width: 0px;
+}

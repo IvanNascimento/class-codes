@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Progamação Coorporativa</string>
+    <string name="titulo">Título</string>
+    <string name="descricao">Descrição</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="enviar">Enviar</string>
+    <string name="criar_nova">Criar Nova</string>
+</resources>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Servidor Aula 11/07/2017</title>
+    <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#enviar").click(function(){
+        const URL = "http://api.fixer.io/latest?base="+$("#Origem").val()
+        $.get(URL,function(data){
+          console.log(data)
+          var Moeda = data.rates[$("#Destino").val()]
+          $("#texto").html("1 "+$("#Origem").val()+" equivale a "+Moeda+" "+$("#Destino").val())
+        });
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <h3>Desta moeda: </h3>
+    <input type="text" id="Origem" placeholder="Sigla da moeda">
+    <h3>Para Esta moeda: </h3>
+    <input type="text" id="Destino" placeholder="Sigla da moeda">
+    <button type="button" id="enviar" name="button">Enviar</button>
+    <br><br>
+    <h2 id="texto"></h2>
+  </body>
+</html>

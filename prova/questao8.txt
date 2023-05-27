@@ -1,0 +1,3 @@
+Utilizando o async e o await podemos evitar de chegar em um ponto onde não
+sabemos mais onde começa ou termina um then(). Coisa que pode acontecer se for
+necessário a utilização de vários then().

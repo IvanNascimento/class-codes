@@ -1,0 +1,37 @@
+#titulo{
+  text-aling: center;
+  color: red;
+}
+
+#menu{
+  color:blue;
+}
+
+.nome{
+  font-weight: bold;
+}
+
+.comentario{
+  text-aling: center;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('open-sans-bold-700.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family : 'Open Sans';
+  src : url ('open-sans-normal-400.woff2') format ('woff2');
+  font-weight : normal;
+  font-style : normal;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

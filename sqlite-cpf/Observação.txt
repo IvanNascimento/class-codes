@@ -1,0 +1,3 @@
+Antes de executar baixe as bibliotecas com npm i
+
+Projeto desenvolvido em contexto de aula, API com banco de dados SQLite para consulta e cadastro de Nome e CPF

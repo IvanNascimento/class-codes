@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title> Organizador </title>
+
+    <script src="jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="multiple-select/multiple-select.css" rel="stylesheet">
+    <script src="multiple-select/multiple-select.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/script.css">
+    <script type="text/javascript" src="../js/script.js"></script>
+  </head>
+
+  <body class="bg">
+    <div class="nav-side-menu">
+      <div class="brand"><center>Menu</div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#Menu"></i>
+      <div class="menu-list">
+        <ul class="menu-content collapse out" id="Menu">
+          <li data-toggle="collapse" data-target="#Pesquisar" class="collapsed active selected">
+            <a><i class="fa fa-search fa-lg" aria-hidden="true"></i> Pesquisar <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="Pesquisar">
+            <li id="AObject"> Todos os Objetos</li>
+            <li id="AGenero"> Todos os Generos</li>
+            <li id="ATipo"> Todos os Tipos</li>
+            <li id="AProdutora"> Todos as Produtoras</li>
+            <li id="ASerie"> Todos as Series</li>
+            <li id="ATObject"> Pesquisar Objetos por tipo</li>
+            <li id="NObject"> Pesquisar Objetos por nome</li>
+            <li id="NGenero"> Pesquisar Genero por nome</li>
+            <li id="NTipo"> Pesquisar Tipo por nome</li>
+            <li id="NProdutora"> Pesquisar Produtora por nome</li>
+            <li id="NSeire"> Pesquisar Serie por nome</li>
+          </ul>
+          <li  data-toggle="collapse" data-target="#Adicionar" class="collapsed active selected">
+            <a><i class="fa fa-cloud-upload fa-lg" aria-hidden="true"></i> Adicionar <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="Adicionar">
+            <li id="AddObject"> Adicionar Objeto</li>
+            <li id="AddGenero"> Adicionar Genero</li>
+            <li id="AddTipo"> Adicionar Tipo</li>
+            <li id="AddProdutora"> Adicionar Produtora</li>
+            <li id="AddSerie"> Adicionar Serie</li>
+          </ul>
+          <li  data-toggle="collapse" data-target="#Editar" class="collapsed active selected">
+            <a><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> Editar <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="Editar">
+            <li id="EObjeto"> Editar Objeto</li>
+            <li id="EGenero"> Editar Genero</li>
+            <li id="ETipo"> Editar Tipo</li>
+            <li id="EProdutora"> Editar Produtora</li>
+            <li id="ESerie"> Editar Serie</li>
+          </ul>
+          <li  data-toggle="collapse" data-target="#Excluir" class="collapsed active selected">
+            <a><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Excluir <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="Excluir">
+            <li id="RObjeto"> Remover Objeto</li>
+            <li id="RGenero"> Remover Genero</li>
+            <li id="RTipo"> Remover Tipo</li>
+            <li id="RProdutora"> Remover Produtora</li>
+            <li id="RSerie"> Remover Serie</li>
+          </ul>
+          <li id="Sobre" data-toggle="collapse" class="collapsed active selected"><a> <i class="fa fa-id-card-o fa-lg" aria-hidden="true"></i> Sobre o criador </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="allObject" style="display: none">
+      <div class="main-center">
+        <div class="mini-menu container">
+          <div class="panel-heading panel-title text-center brand"> Todos os Objetos
+            <a style="cursor: pointer" onclick='mudar("allObject"); limpar("TodosObject")'>
+              <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+            <a style="cursor: pointer" onclick='atualizar("TodosObject", "allObject", "ObterObjeto", "");'>
+              <i class="fa fa-refresh fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+          </div>
+          <!-- Gerado automaticamente -->
+          <div class="menu-list" id="TodosObject">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="allGeneros" style="display: none">
+      <div class="main-center">
+        <div class="mini-menu container">
+          <div class="panel-heading panel-title text-center brand"> Todos os Generos
+            <a style="cursor: pointer" onclick='mudar("allGeneros"); limpar("TodosGeneros")'>
+              <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+            <a style="cursor: pointer" onclick='atualizar("TodosGeneros", "allGeneros", "ObterGenerico", "genre");'>
+              <i class="fa fa-refresh fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+          </div>
+          <!-- Gerado automaticamente -->
+          <div class="menu-list" id="TodosGeneros">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="allTipos" style="display: none">
+      <div class="main-center">
+        <div class="mini-menu container">
+          <div class="panel-heading panel-title text-center brand"> Todos os Tipos
+            <a style="cursor: pointer" onclick='mudar("allTipos"); limpar("TodosTipos")'>
+              <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+            <a style="cursor: pointer" onclick='atualizar("TodosTipos", "allTipos", "ObterGenerico", "type");'>
+              <i class="fa fa-refresh fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+          </div>
+          <!-- Gerado automaticamente -->
+          <div class="menu-list" id="TodosTipos">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="allProdutores" style="display: none">
+      <div class="main-center">
+        <div class="mini-menu container">
+          <div class="panel-heading panel-title text-center brand"> Todas as Produtoras
+            <a style="cursor: pointer" onclick='mudar("allProdutores"); limpar("TodosProdutores")'>
+              <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+            <a style="cursor: pointer" onclick='atualizar("TodosProdutores", "allProdutores", "ObterGenerico", "producer");'>
+              <i class="fa fa-refresh fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+          </div>
+          <!-- Gerado automaticamente -->
+          <div class="menu-list" id="TodosProdutores">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="allSeries" style="display: none">
+      <div class="main-center">
+        <div class="mini-menu container">
+          <div class="panel-heading panel-title text-center brand"> Todas as Series
+            <a style="cursor: pointer" onclick='mudar("allSeries"); limpar("TodosSeries")'>
+              <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+            <a style="cursor: pointer" onclick='atualizar("TodosSeries", "allSeries", "ObterGenerico", "series");'>
+              <i class="fa fa-refresh fa-2x fa-lg" aria-hidden="true"></i>
+            </a>
+          </div>
+          <!-- Gerado automaticamente -->
+          <div class="menu-list" id="TodosSeries">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" main-center" id="newObject" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand brand"> Cadastrar Novo Objetos
+          <a style="cursor: pointer" onclick='mudar("newObject");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+
+          <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label">Nome do Objeto</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="name" placeholder="Objeto">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="descricao" class="cols-sm-2 control-label">Descrição do Objeto</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-book fa" aria-hidden="true"></i></span>
+                  <textarea class="form-control" id="descricao" placeholder="Um pequeno resumo..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="avaliacao" class="cols-sm-2 control-label">Avaliação</label>
+              <div class="cols-sm-10">
+                <div class="input-group" style="background-color: #020203">
+                  <span class="input-group-addon"><i class="fa fa-star fa" aria-hidden="true"></i></span>
+                  <input type="range" class="form-control" id="avaliacao" min="0" max="10" >
+                  <span class="input-group-addon"><i id="VA">5</i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="produtor" class="cols-sm-2 control-label"> Produtor </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                  <select class="select" id="produtor">
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="serie" class="cols-sm-2 control-label"> Serie </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-television fa-lg" aria-hidden="true"></i></span>
+                  <select class="select" id="serie">
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tipo" class="cols-sm-2 control-label"> Tipo </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></span>
+                  <select class="select" id="tipo">
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="generos" class="cols-sm-2 control-label"> Generos </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-bookmark fa-lg" aria-hidden="true"></i></span>
+                  <select class="select" multiple="multiple" id="generos">
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="Ok"> Enviar </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-center" id="newGenre" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand"> Cadastrar Novo Genero
+          <a style="cursor: pointer" onclick='mudar("newGenre");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+          <div class="form-group">
+            <label for="nameG" class="cols-sm-2 control-label">Nome do Genero</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="nameG" placeholder="Genero">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="OkG"> Enviar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-center" id="newType" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand"> Cadastrar Novo Tipo
+          <a style="cursor: pointer" onclick='mudar("newType");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+          <div class="form-group">
+            <label for="nameT" class="cols-sm-2 control-label">Nome do Tipo</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="nameT" placeholder="Tipo">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="OkT"> Enviar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-center" id="newProducer" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand"> Cadastrar Nova Produtora
+          <a style="cursor: pointer" onclick='mudar("newProducer");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+          <div class="form-group">
+            <label for="nameP" class="cols-sm-2 control-label">Nome da Produtora</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="nameP" placeholder="Produtora">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="OkP"> Enviar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-center" id="newSeries" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand"> Cadastrar Nova Serie
+          <a style="cursor: pointer" onclick='mudar("newSeries");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+          <div class="form-group">
+            <label for="nameS" class="cols-sm-2 control-label">Nome da Serie</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="nameS" placeholder="Serie">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="OkS"> Enviar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-center" id="PON" style="display: none">
+      <div class="mini-menu container">
+        <div class="panel-heading panel-title text-center brand"> Pesquisar Objeto por Nome
+          <a style="cursor: pointer" onclick='mudar("PON");'>
+            <i class="fa fa-times-circle fa-2x fa-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="main-center form-horizontal">
+          <div class="form-group">
+            <label for="namePON" class="cols-sm-2 control-label">Nome do Objeto</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-address-book-o fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="namePON" placeholder="Objeto">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="OkPON"> Enviar </button>
+          </div>
+        </div>
+        <div class="menu-list" id="resultPON">
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

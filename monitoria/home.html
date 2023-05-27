@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Perfil</title>
+    <script defer src="/__/firebase/5.9.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.9.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.9.4/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/5.9.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.9.4/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="js/home.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <img id="photo" src="" height="200" width="150"></img>
+        <p id="nome"></p>
+        <p id="bio"></p>
+        <p id="aniversario"></p>
+        <p id="sexo"></p>
+        <p id="situacao"></p>
+      </div>
+      <div>
+        Anônimo ?
+        <select id="anon">
+          <option value="y"> Sim </option>
+          <option value="n"> Não </option>
+        </select>
+      </div>
+      <div>
+        <textarea id="msg" rows="5" cols="20"></textarea>
+      </div>
+      <button type="button" onclick="sendMessage()"> Enviar </button>
+    </div>
+    <div id="feed">
+
+    </div>
+  </body>
+</html>

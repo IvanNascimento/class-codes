@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Conversor</title>
+    <script src="arquivos/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="arquivos/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="arquivos/bootstrap.css">
+    <link rel="stylesheet" href="arquivos/style.css">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <header>
+        <h3>Conversor de Unidades</h3>
+      </header>
+      <br>
+      <input type="number" placeholder="Valor" id="Valor"><br><br>
+      <select class="" name="" id="Medida">
+        <option value="#">Selecione uma medida</option>
+        <option value="Temperatura">Temperatura</option>
+        <option value="Massa">Massa</option>
+        <option value="Comprimento">Comprimento</option>
+        <option value="Volume">Volume</option>
+        <option value="InformacaoDigital">Informação Digital</option>
+      </select><br><br>
+      <select class="" name="" id="Unidade">
+        <option value="#">Selecione uma unidade</option>
+      </select><br><br>
+      <button class="btn btn-primary" type="button" name="button" id="Enviar">Enviar</button>
+      <br><br>
+      <textarea id="resultado" rows="5" cols="50" placeholder="Os resultados vem aqui."></textarea>
+    </div>
+  </body>
+</html>

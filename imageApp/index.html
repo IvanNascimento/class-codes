@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="ImageApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="node_modules\angular\angular.min.js" charset="utf-8"></script>
+    <script src="https://webdev-ifpb.appspot.com/script.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MainCtrl as c">
+    <button type="button" ng-click="c.login()"> Login </button>
+    <button type="button" ng-click="c.getLink()"> Submeter imagem </button>
+    <button type="button" ng-click="c.getMe()"> Perfil </button>
+
+    <form method="POST" enctype="multipart/form-data" ng-submit="c.submit()">
+      <input type="file" file-model="myImage">
+      <input type="submit" name="submit" value="Enviar">
+    </form>
+
+    <img ng-repeat="id in c.info.images"
+    ng-src="https://backend-dot-webdev-ifpb.appspot.com/img/{{id}}";
+    height=20% width=20% ></img>
+
+  </body>
+</html>

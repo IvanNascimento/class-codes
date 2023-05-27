@@ -1,0 +1,13 @@
+.header {
+  display: grid;
+  grid-area: auto;
+}
+.logo {
+  grid-row: 1;
+  grid-column-end: 2;
+  background-color: gray;
+}
+.pages {
+  grid-row: 1;
+  background-color: gray;
+}

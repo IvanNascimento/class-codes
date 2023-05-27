@@ -1,0 +1,43 @@
+p, h1 {
+  color: rgb(0, 0, 255);
+  font-style: italic;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px gray;
+}
+
+.verde {
+  color: green;
+  background-color: #AFFF66;
+}
+
+.fonte-grande {
+  font-size: 30px;
+}
+
+#t1 {
+  font-family: 'Faster One', cursive;
+}
+
+input[type="text"] {
+  background-color: #E8F4FF;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+input[type="button"] {
+  background-color: #E8F4FF;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+input[type="button"]:hover {
+  background-color: #0000FF;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+}

@@ -1,0 +1,71 @@
+<div class="row mx-0">
+  <div class="col mx-3 my-3">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{ c.usuario.first_name }} {{ c.usuario.last_name }}</h3>
+        <h4>@{{ c.usuario.username }}</h4>
+        <h6>{{ c.usuario.email }}</h6>
+      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#msmModal">
+        Enviar Mensagem
+      </button>
+      <div class="modal fade" ng-init="getUsers()" id="msmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enviar Mensagem</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form ng-submit="enviarMsg()">
+              <div class="modal-body">
+                <div class="form-group">
+                  <select class="form-control" ng-model="c.mensagem.to">
+                    <option ng-option="u as u.username for u in c.usuarios"></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" ng-model="c.mensagem.text" rows="8" cols="80"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" name="enviar"> Enviar </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6">
+        <h5> Enviadas </h5>
+        <hr>
+        <div class="card">
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="element in c.enviadas">
+              <h6> Para: <b>{{ element.to.username }}</b> </h6>
+              <h6> {{ element.created_at | date:"dd/MM/yyyy hh:mm" }} </h6>
+              <h6> {{ element.text }} </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <h5> Recebidas </h5>
+        <hr>
+        <div class="card">
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="element in c.enviadas">
+              <h6> De: <b>{{ element.to.username }}</b> </h6>
+              <h6> {{ element.created_at | date:"dd/MM/yyyy hh:mm" }} </h6>
+              <h6> {{ element.text }} </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

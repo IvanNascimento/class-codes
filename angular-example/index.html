@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="images">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MainCtrl as c">
+    <div class="">
+      {{ c.profile.firstName + " " + c.profile.lastName }}
+    </div>
+    <div ng-repeat="img in c.profile.images">
+      <div class="">
+        <img ng-src="{{img.url}}" alt="">
+      </div>
+      <div class="">
+        <button ng-click="c.like(img)">Curtir</button>
+        <div class="row">
+          <div class="col">
+            {{ c.ImgLikes(img) }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="text" ng-show="c.idEdit === $index ? true : false" ng-model="c.valor">
+            <button type="button" ng-click="c.editar(img, $index)"> {{ c.idEdit === $index ? "Salvar" : "Editar" }} </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span ng-repeat="tag in img.tags"><a href="{{tag}}">#{{tag}}</a> </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

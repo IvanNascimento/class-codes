@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="intro">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="AppController as c">
+    <input type="text" ng-model="valor">
+    <button type="button" ng-click="c.adicionar()"> Adicionar</button>
+    <span ng-bind="valor"></span>
+    <ul>
+      <li ng-repeat="a in c.animais"> {{ a }} {{ $index }}</li>
+    </ul>
+    <ul>
+      <li ng-repeat="(c, v) in c.nomes"> {{ c }} {{ v }}</li>
+    </ul>
+  </body>
+</html>

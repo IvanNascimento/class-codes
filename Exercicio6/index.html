@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="App">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body class="container" ng-controller="AppController as app">
+    <div class="row mt-3">
+      <div class="col-3">
+        <div class="row">
+          <div class="col">
+            <label for="UserName">Nome: </label>
+            <input type="text" name="UserName" class="form-control" placeholder="Zézinho" ng-model="nome">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="UserMatricula">Matricula: </label>
+            <input type="number" name="UserMatricula" class="form-control" placeholder="201713530058" ng-model="matricula">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="UserSeri:">Serie: </label>
+            <input type="text" name="UserSerie" class="form-control" placeholder="1° ano" ng-model="serie">
+          </div>
+        </div>
+      <div class="row mt-2">
+        <div class="col-auto justify-content-end">
+          <button type="button" class="btn btn-primary" ng-click="app.Adicionar()"> Enviar </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="e in app.dados">
+          Nome: {{ e.Nome }} |
+          Matricula: {{ e.Matricula }} |
+          Serie: {{ e.Serie }}
+        </li>
+      </ul>
+    </div>
+    </div>
+  </body>
+</html>

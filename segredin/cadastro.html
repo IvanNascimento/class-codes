@@ -1,0 +1,37 @@
+<div class="row justify-content-center m-0">
+  <div class="col-8">
+    <form ng-submit="cadastrar()">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="fristname">Primeiro nome: </label>
+            <input type="text" name="fristname" class="form-control" ng-model="c.usuario.first_name" placeholder="João" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="lastname">Último nome: </label>
+            <input type="text" name="lastname" class="form-control" ng-model="c.usuario.last_name" placeholder="Silva" required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Nome de usuário: </label>
+        <input type="text" name="username" class="form-control" ng-model="c.usuario.username" placeholder="joaosilva2" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" name="email" class="form-control" ng-model="c.usuario.email" placeholder="voce@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha: </label>
+        <input type="password" name="password" class="form-control" ng-model="c.password" required>
+      </div>
+      <div class="form-group">
+        <label for="passwordconfirm">Confirmação de senha: </label>
+        <input type="password" name="passwordconfirm" class="form-control" ng-model="c.password2" required>
+      </div>
+      <button type="submit" name="button" class="btn btn-primary btn-block">Cadastrar-se</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      .texto {
+        text-align: center;
+        line-height: 50px;
+      }
+
+      .top {
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100%;
+        background-color: pink;
+        height: 60px;
+      }
+
+      .middel {
+        display: inline;
+        height: 550px;
+        width: 100%;
+      }
+
+      .left {
+        width: 25%;
+        height: 550px;
+        background-color: red;
+        display: inline-block;
+      }
+
+      .center {
+        width: 49%;
+        height: 550px;
+        background-color: purple;
+        display: inline-block;
+      }
+
+      .right {
+        width: 25%;
+        height: 550px;
+        background-color: orange;
+        display: inline-block;
+      }
+
+      .base {
+        width: 100%;
+        height: 30px;
+        background-color: green;
+        margin-top: 10px;
+      }
+
+      .base .texto {
+        line-height: 30px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="top">
+      <div class="texto">
+        Topo Larg. 100% / Alt. 60px / Marg. Baixo 10px
+      </div>
+    </div>
+
+    <div class="middel">
+      <div class="left">
+        <div class="texto">
+          Direita Larg. 25% / Alt. 550px
+        </div>
+      </div>
+      <div class="center">
+        <div class="texto">
+          Centro Larg. 50% / Alt. 550px / Margens 0.5%
+        </div>
+      </div>
+      <div class="right">
+        <div class="texto">
+          Esquerda Larg. 25% Alt. 550px
+        </div>
+      </div>
+    </div>
+    <div class="base">
+      <div class="texto">
+        Pé Larg. 100% / Alt. 30px / Marg. Superior 10px
+      </div>
+    </div>
+
+  </body>
+
+</html>

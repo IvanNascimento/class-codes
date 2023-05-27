@@ -1,0 +1,13 @@
+.Geral {
+  display: table;
+}
+
+.Coluna {
+  display: table-cell;
+  margin: 0px;
+}
+
+.Foto, .Nome {
+  display: inline;
+  height: 50%;
+}

@@ -1,0 +1,39 @@
+// gets All
+  /producer/all
+  /series/all
+  /genre/all
+  /type/all
+  /object/all
+
+// gets One
+  /producer/:Nome
+  /genre/:Nome
+  /type/:Nome
+  /series/:Nome
+  /object/:Nome
+
+// get One-All
+  /object/:type
+
+// post
+  /producer/add
+  /genre/add
+  /type/add
+  /series/add
+  /object/add
+
+// put
+  /producer/update
+  /genre/update
+  /type/update
+  /series/update
+  /object/update
+  /object/add/:objectId/genre/:genreId
+  /object/remove/:objectId/genre/:genreId
+
+// delete
+  /producer/delete
+  /genre/delete
+  /type/delete
+  /series/delete
+  /object/delete

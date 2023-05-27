@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ProgCorp</string>
+    <string name="welcome_message">Olá!</string>
+    <string name="send">Enviar</string>
+    <string name="meu_texto">Meu texto</string>
+    <string name="titulo">Título</string>
+    <string name="descricao">Descrição</string>
+    <string name="confirmar">confirmar</string>
+    <string name="lista">lista</string>
+</resources>

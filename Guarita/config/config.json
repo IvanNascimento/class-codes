@@ -1,0 +1,14 @@
+{
+  "development": {
+    "storage": "./db.dev.sql",
+    "dialect": "mysql"
+  },
+  "test": {
+    "storage": "./db.test.sql",
+    "dialect": "mysql"
+  },
+  "production": {
+    "storage": "./db.sql",
+    "dialect": "mysql"
+  }
+}

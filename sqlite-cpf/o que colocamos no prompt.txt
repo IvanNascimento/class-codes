@@ -1,0 +1,52 @@
+o que colocamos no prompt
+
+
+
+CREATE TABLE ListaReprods (
+ListaReprodId INT PRIMARY KEY NOT NULL,
+Nome TEXT NOT NULL
+);
+
+
+INSERT INTO ListaReprods (ListaReprodId,Nome)
+ VALUES (1, 'Selecao Mastruz com Leite');
+INSERT INTO ListaReprods (ListaReprodId,Nome)
+ VALUES (2, 'Melhores de Luiz Gonzaga');
+INSERT INTO ListaReprods (ListaReprodId,Nome)
+ VALUES (3, 'Magnificos TOP Romanticas');
+
+
+CREATE TABLE Banco(
+UId INT PRIMARY KEY NOT NULL,
+Nome TEXT NOT NULL,
+Cpf TEXT NOT NULL
+);
+
+
+
+INSERT INTO Banco (UId,nome,cpf)
+ VALUES (1, 'wesley', '5554443-2');
+INSERT INTO Banco (UId,nome,cpf)
+ VALUES (2, 'lucas','4445552-3');
+INSERT INTO Banco (UId,nome,cpf)
+ VALUES (3, 'marcos', '2221115-2');
+
+
+
+
+CREATE TABLE Conta(
+CId INT PRIMARY KEY NOT NULL,
+Numero INT NOT NULL,
+Senha TEXT NOT NULL
+);
+
+
+
+INSERT INTO Conta (CId,Numero,Senha)
+ VALUES (1500, 455544, 'olajesus');
+
+INSERT INTO Conta (CId,Numero,Senha)
+ VALUES (2000, 45555, 'pfvrnosdenota');
+
+INSERT INTO Conta (CId,Numero,Senha)
+ VALUES (1000, 46666, 'nosaprove');

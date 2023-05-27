@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pergunta"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:text="Questão"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/alternativas" />
+
+    <RadioGroup
+        android:id="@+id/alternativas"
+        android:layout_width="match_parent"
+        android:layout_height="264dp"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/alternativa_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alternativa"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/alternativa_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alternativa"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/alternativa_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alternativa"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/certa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alternativa"
+            android:visibility="invisible"
+            android:enabled="false"
+            android:textSize="15dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Ok_Questao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="responder"
+        android:text="Confirmar" />
+
+</LinearLayout>

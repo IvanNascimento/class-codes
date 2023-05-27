@@ -1,0 +1,50 @@
+// Objeto
+  #get
+    object/all
+    params.type
+    params.Nome
+  #post
+    {
+      "Nome": string,
+      "Avaliacao": int,
+      "Descricao": text,
+      "TipoId": int(id),
+      "SerieId": int(id),
+      "ProdutorId": int(id)
+    }
+  #put
+    {
+      "Id": int(id),
+      "Nome": string,
+      "Avaliacao": int,
+      "Descricao": text,
+      "TipoId": int(id),
+      "SerieId": int(id),
+      "ProdutorId": int(id)
+    }
+  #add genero
+    /object/add/:objectId/genre/:genreId
+  #remove genero
+    /object/remove/:objectId/genre/:genreId
+  #delete
+    {
+      "Id": int(id)
+    }
+
+// Não Objeto
+  #get
+    /::/all
+    params.Nome
+  # post
+    {
+      "Nome": string
+    }
+  # put
+    {
+      "Id": int(id),
+      "Nome": string
+    }
+  #delete
+    {
+      "Id": int(id)
+    }

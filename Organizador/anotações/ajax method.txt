@@ -1,0 +1,7 @@
+$.ajax({
+  method: "metodo a ser usado",
+  url: "url da aplicao",
+  data: dados que serao enviados,
+  success: function(result,status,xhr){},
+  error: function(xhr,status,error){}
+})

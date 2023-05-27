@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="imageapp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="scripts/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/angular-route.min.js" charset="utf-8"></script>
+    <script src="https://webdev-ifpb.appspot.com/script.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="login.ctrl.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="scripts/dist/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="LoginCtrl as c">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-primary"
+            ng-click="c.login()">
+            Fazer login
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h5>{{ c.perfil.email }}</h5>
+        </div>
+      </div>
+      <div class="row" ng-repeat="i in c.perfil.Images">
+        <div class="col">
+          <img class="d-block" ng-src="https://backend-dot-webdev-ifpb.appspot.com/img/{{ i.fileId }}" alt="">
+          <button
+            class="d-block btn btn-primary"
+            ng-click="c.like(i.id)">
+            Like
+          </button>
+          <h5>{{ i.Likes.length }}</h5>
+          <div class="" ng-repeat="j in i.Tags">
+            <h5>#{{j.text}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

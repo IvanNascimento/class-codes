@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <form>
+            <b><h3>Nova conta</h3></b>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input class="form-control" type="text" name="name" value="" placeholder="Ex: Ivan">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="lastname">Sobrenome</label>
+                  <input class="form-control" type="text" name="lastname" value="" placeholder="Ex: Nascimento">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Username"> Nome de usuário</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" name="Username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email (Opcional)</label>
+              <input class="form-control" type="email" name="email" value="" placeholder="exemplo@exemplo.com">
+            </div>
+            <div class="form-group">
+              <label for="end1">Endereço 1</label>
+              <input class="form-control" type="text" name="end1" value="" placeholder="Rua fulano de tal, 000">
+            </div>
+            <div class="form-group">
+              <label for="end2">Endereço 2</label>
+              <input class="form-control" type="text" name="end2" value="" placeholder="Prédio, casa, ou apartamento">
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="estado">Estado</label>
+                <select class="form-control" name="estado">
+                  <option value="">Escolha...</option>
+                </select>
+              </div>
+              <div class="col-5">
+                <label for="cidade">Cidade</label>
+                <select class="form-control" name="cidade">
+                  <option value="">Escolha...</option>
+                </select>
+              </div>
+              <div class="col-3">
+                <label for="cep">CEP</label>
+                <input class="form-control" type="text" name="cep" value="" placeholder="00000-000">
+              </div>
+            </div>
+            <hr>
+            <div class="input-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Desejo inscrever-me na lista de emails</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Desejo reseber notificações sobre novidades</label>
+              </div>
+            </div>
+            <hr>
+            <button type="submit" name="button" class="btn btn-primary btn-lg btn-block"><b>Cadastrar</b></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+    <script src="js/popper.js" charset="utf-8"></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  </body>
+</html>

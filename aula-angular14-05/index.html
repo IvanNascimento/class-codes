@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="intro">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="AppController as c">
+    <input type="text" ng-model="valor">
+    <button type="button" ng-click="c.adicionar()">Adicionar</button>
+    <div ng-show="editando">
+      Editando: <input type="text" ng-model="valorEdicao">
+      <button type="button" ng-click="c.confirmarEdicao(emEdicao)">Confirmar</button>
+    </div>
+    <ul>
+      <li ng-repeat="a in c.animais track by $index">{{ a }}
+        <button type="button" name="button" ng-click="c.editar($index)">editar</button>
+        <button type="button" ng-click="c.remover($index)">x</button>
+      </li>
+    </ul>
+  </body>
+</html>
