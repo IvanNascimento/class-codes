@@ -1,44 +1,32 @@
 // Bibliotecas
 const express = require("express");
-const { rateLimit } = require("express-rate-limit");
+const vhost = require("vhost");
 const cors = require("cors");
-const bcrypt = require("bcryptjs");
+const { rateLimit } = require("express-rate-limit");
 const https = require("https");
 const fs = require("fs");
-const vhost = require("vhost");
-const { AUTHORIZATION, HOST, PORT } = require("./constants/constants");
 const path = require("path");
 
+// Constants
+const { AUTHORIZATION, HOST, PORT } = require("./constants/constants");
+
+// Modulos
+const { db, models, GenViews } = require("./models/index");
+
+// Rotas
+const { notfound } = require("./apps/notfound");
+const { redirect } = require("./apps/redirect");
+const views = require("./routes/views");
+
 // Inicialização de variáveis
-const server = express();
-const redirect = express();
-const application = express();
-const http = express();
-const notfound = express();
-
-// HTTP > HTTPS Server
-http.use((req, res, next) => {
-  if (req.url == "/") {
-    res.redirect(`https://${req.hostname}:${PORT}/home`);
-  } else {
-    res.redirect(`https://${req.hostname}:${PORT}${req.url}`);
-  }
-});
-
-// 404 server
-notfound.use((req, res, next) => {
-  res.status(404).send({
-    message: "Error",
-    details: `${req.url} not Found`,
-    extra: {
-      method: req.method,
-      url: req.url,
-    },
-  });
-});
+// Servers
+const httpServer = express();
+const httpsServer = express();
+// Apps
+const main = express();
 
 // Limit the number of requisitions of a IP
-application.use(
+main.use(
   rateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
     max: 60,
@@ -51,15 +39,15 @@ application.use(
   })
 );
 
-application.use(express.json());
-application.use(
+main.use(express.json());
+main.use(
   express.urlencoded({
     extended: true,
   })
 );
 
 // CORS Configuration
-application.use(
+main.use(
   cors({
     origin: "*",
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
@@ -67,10 +55,18 @@ application.use(
   })
 );
 
-application.use("/home", express.static(path.join(__dirname, "public")));
+// Archives
+main.use("/css", express.static(path.join(__dirname, "public/css")));
+main.use("/js", express.static(path.join(__dirname, "public/js")));
+
+main.get("/", (req, res, next) => {
+  res.status(308).redirect("/home");
+});
+
+main.use("/", views);
 
 // API Online ?
-application.get(`/online`, (req, res, next) => {
+main.get(`/online`, (req, res, next) => {
   res.status(200).send({
     message: "Success",
     detail: "Online",
@@ -78,7 +74,7 @@ application.get(`/online`, (req, res, next) => {
 });
 
 // Authentication system
-application.use((req, res, next) => {
+main.use((req, res, next) => {
   if (req.get("Authorization") == AUTHORIZATION) {
     next();
   } else {
@@ -90,8 +86,15 @@ application.use((req, res, next) => {
   }
 });
 
+main.use("/api", (req, res, next) => {
+  res.status(501).send({
+    message: "Error",
+    details: "Not Implemented",
+  });
+});
+
 // 404
-application.use((req, res, next) => {
+main.use((req, res, next) => {
   res.status(404).send({
     message: "Error",
     detail: "Page not Found",
@@ -103,7 +106,7 @@ application.use((req, res, next) => {
 });
 
 // Error handling
-application.use((err, req, res, next) => {
+main.use((err, req, res, next) => {
   console.log(err);
   res.status(500).send({
     message: "Error",
@@ -111,16 +114,16 @@ application.use((err, req, res, next) => {
   });
 });
 
-// HTTP > HTTPS
-redirect.use(vhost("localhost", http));
-redirect.use(vhost("*.localhost", http));
+// HTTP to HTTPS
+httpServer.use(vhost("localhost", redirect));
+httpServer.use(vhost("*.localhost", redirect));
 
 // Loja
-server.use(vhost("loja.localhost", application));
+httpsServer.use(vhost("loja.localhost", main));
 
 // Not Found
-server.use(vhost("localhost", notfound));
-server.use(vhost("*.localhost", notfound));
+httpsServer.use(vhost("localhost", notfound));
+httpsServer.use(vhost("*.localhost", notfound));
 
 try {
   // HTTPS
@@ -128,15 +131,16 @@ try {
     key: fs.readFileSync("./https/key.pem"),
     cert: fs.readFileSync("./https/cert.pem"),
   };
-  https.createServer(HTTPSOptions, server).listen(PORT, HOST);
-  console.log(`Server running on ${HOST}:${PORT}`);
+  https.createServer(HTTPSOptions, httpsServer).listen(PORT, HOST);
+  console.log(`HTTPS Server running on https://${HOST}:${PORT}`);
 } catch (e) {
+  console.log(e);
   // HTTP
-  server.listen(PORT, HOST, () => {
-    console.log(`Server running on ${HOST}:${PORT}`);
+  httpsServer.listen(PORT, HOST, () => {
+    console.log(`HTTP Server running on http://${HOST}:${PORT}`);
   });
 } finally {
-  redirect.listen(80, HOST, () => {
-    console.log("HTTP Redirect listening");
+  httpServer.listen(80, HOST, () => {
+    console.log("HTTP Redirect server listening");
   });
 }
