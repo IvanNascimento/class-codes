@@ -6,48 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/index.js"></script>
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <a href="">Logo</a>
+        <img
+          src="https://i.pinimg.com/originals/e0/7f/c4/e07fc428a1a7efed9ae868771493ae81.png"
+          alt="logo"
+          width="200rem"
+          height="50rem"
+          onclick="redirect('home')"
+        />
       </div>
       <div class="pages">
-        <a href="/home">Home</a>
-        <a href="/products">Produtos</a>
-        <a href="/about">Quem Somos</a>
-        <a href="/cadastro">Entrar</a>
+        <button class="links home" onclick="redirect('home')" value="home">
+          Home
+        </button>
+        <button
+          class="links products"
+          onclick="redirect('products')"
+          value="products"
+        >
+          Produtos
+        </button>
+        <button class="links about" onclick="redirect('about')" value="about">
+          Quem Somos
+        </button>
+        <button class="login" onclick="redirect('cadastro')" value="cadastro">
+          Entrar
+        </button>
       </div>
     </div>
-    <div>
-      <label for="cadastro">Cadastro de um Novo Usuário</label>
-      <form id="cadastro" method="post" onsubmit="cadastrar">
-        <div class="coluna1">
-          <label for="name"> Nome </label>
-          <input type="text" placeholder="João Maria" id="name" />
-          <label for="cpf"> CPF </label>
-          <input type="text" placeholder="000.000.000-00" id="cpf" />
-          <label for="cep"> CEP </label>
-          <input type="text" placeholder="00.000-000" id="cep" />
-          <label for="number"> Número </label>
-          <input type="text" placeholder="000" id="number" />
-          <label for="city"> Cidade </label>
-          <input type="text" placeholder="Cachoeira das Águas" id="city" />
+    <br />
+    <div class="form">
+      <h2 class="form_title">Cadastro de um Novo Usuário</h2>
+      <form id="cadastro" method="post" class="grid" onsubmit="cadastrar">
+        <div class="col1">
+          <div class="form_field">
+            <label for="name">Nome</label>
+            <input type="text" placeholder="  João Maria" id="name" />
+          </div>
+          <div class="form_field">
+            <label for="cpf">CPF</label>
+            <input type="text" placeholder="  000.000.000-00" id="cpf" />
+          </div>
+          <div class="form_field">
+            <label for="cep">CEP</label>
+            <input type="text" placeholder="  00.000-000" id="cep" />
+          </div>
+          <div class="form_field">
+            <label for="number">Número</label>
+            <input type="text" placeholder="  B001" id="number" />
+          </div>
+          <div class="form_field">
+            <label for="city">Cidade</label>
+            <input type="text" placeholder="  Cachoeira das Águas" id="city" />
+          </div>
         </div>
-        <div class="coluna2">
-          <label for="lastname">Sobrenome</label>
-          <input type="text" placeholder="Silva" id="lastname" />
-          <label for="phone">Celular</label>
-          <input type="text" placeholder="(00) 0 0000-0000" id="phone" />
-          <label for="street">Rua</label>
-          <input type="text" placeholder="Dona Florinda" id="street" />
-          <label for="distrit">Bairro</label>
-          <input type="text" placeholder="Centrão" id="distrit" />
-          <label for="state">Estado</label>
-          <input type="text" placeholder="Rio Grande Do Norte" id="state" />
+        <div class="col2">
+          <div class="form_field">
+            <label for="lastname">Sobrenome</label>
+            <input type="text" placeholder="  Silva" id="lastname" />
+          </div>
+          <div class="form_field">
+            <label for="phone">Celular</label>
+            <input type="text" placeholder="  (00) 0 0000-0000" id="phone" />
+          </div>
+          <div class="form_field">
+            <label for="street">Rua</label>
+            <input type="text" placeholder="  Dona Florinda" id="street" />
+          </div>
+          <div class="form_field">
+            <label for="distrit">Bairro</label>
+            <input type="text" placeholder="  Centrão" id="distrit" />
+          </div>
+          <div class="form_field">
+            <label for="state">Estado</label>
+            <input type="text" placeholder="  Rio Grande Do Norte" id="state" />
+          </div>
         </div>
-        <button type="submit">Cadastrar</button>
       </form>
+      <button type="submit" class="form_button">Cadastrar</button>
     </div>
     <script src="/home/js/index.js" defer></script>
   </body>

@@ -16,7 +16,7 @@ const { db, models, GenViews } = require("./models/index");
 // Rotas
 const { notfound } = require("./apps/notfound");
 const { redirect } = require("./apps/redirect");
-const views = require("./routes/views");
+const views = require("./routes/publicViews");
 
 // Inicialização de variáveis
 // Servers

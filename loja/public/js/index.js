@@ -14,3 +14,11 @@ document.addEventListener("submit", (event) => {
 
   cadastrar();
 });
+
+/**
+ * @param {String} url
+ */
+function redirect(url) {
+  // console.log(event.value);
+  return window.location.replace(`/${url}`);
+}

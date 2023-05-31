@@ -11,16 +11,49 @@
   <body>
     <div class="header">
       <div class="logo">
-        <a href="">Logo</a>
+        <img
+          src="https://i.pinimg.com/originals/e0/7f/c4/e07fc428a1a7efed9ae868771493ae81.png"
+          alt="logo"
+          width="200rem"
+          height="50rem"
+          onclick="redirect('home')"
+        />
       </div>
       <div class="pages">
-        <a href="/home">Home</a>
-        <a href="/products">Produtos</a>
-        <a href="/about">Quem Somos</a>
-        <a href="/cadastro">Entrar</a>
+        <button class="links home" onclick="redirect('home')" value="home">
+          Home
+        </button>
+        <button
+          class="links products"
+          onclick="redirect('products')"
+          value="products"
+        >
+          Produtos
+        </button>
+        <button class="links about" onclick="redirect('about')" value="about">
+          Quem Somos
+        </button>
+        <button class="login" onclick="redirect('cadastro')" value="cadastro">
+          Entrar
+        </button>
       </div>
     </div>
-    <div class="banner">Banner bonito</div>
-    <div class="products_display">Produtos</div>
+    <div class="banner">Banner de ofertas</div>
+    <div class="products_display">
+      <div class="product_line">
+        <div class="product_ad prd1">Roupas Femininas</div>
+        <div class="product_ad prd2">Beleza</div>
+        <div class="product_ad prd3">Moda Infantil</div>
+        <div class="product_ad prd4">Calçados</div>
+        <div class="product_ad prd5">Casa e Decoração</div>
+      </div>
+      <div class="product_line">
+        <div class="product_ad prd6">Roupas Masculinas</div>
+        <div class="product_ad prd7">Esporte e Lazer</div>
+        <div class="product_ad prd8">Eletrônicos</div>
+        <div class="product_ad prd9">Brinquedos</div>
+        <div class="product_ad prd10">Saúde</div>
+      </div>
+    </div>
   </body>
 </html>

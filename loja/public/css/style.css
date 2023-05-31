@@ -1,13 +1,181 @@
 .header {
-  display: grid;
-  grid-area: auto;
+  display: flex;
+  width: 100%;
 }
+
 .logo {
-  grid-row: 1;
-  grid-column-end: 2;
+  border-radius: 25px;
+  background-color: gray;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.pages {
+  border-radius: 25px;
+  display: grid;
+  background-color: gray;
+  grid-template-areas: 'home home products products about about login';
+  margin-left: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.login {
+  grid-area: 'login';
+  cursor: pointer;
+  grid-column-start: 7;
+  margin-right: 1rem;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.links {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.home {
+  grid-area: 'home';
+}
+
+.products {
+  grid-area: 'products';
+}
+
+.about {
+  grid-area: 'about';
+}
+
+.banner {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  background-color: lightblue;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+}
+
+.products_display {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  background-color: lightcyan;
+  display: block;
+}
+
+.product_line {
+  display: flex;
+  justify-content: center;
+}
+
+.product_ad {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-size: 20px;
+}
+
+.prd1 {
+  background-color: aqua;
+}
+.prd2 {
+  background-color: lightcoral;
+}
+.prd3 {
+  background-color: coral;
+}
+.prd4 {
+  background-color: brown;
+}
+.prd5 {
+  background-color: burlywood;
+}
+.prd6 {
+  background-color: aquamarine;
+}
+.prd7 {
+  background-color: violet;
+}
+.prd8 {
+  background-color: blueviolet;
+}
+.prd9 {
   background-color: gray;
 }
-.pages {
-  grid-row: 1;
-  background-color: gray;
+.prd10 {
+  background-color: pink;
+}
+
+.form {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.form_title {
+  background-color: lightblue;
+  width: 100%;
+  height: 3rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_button {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.form_field {
+  display: block;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form_field > input {
+  height: 2rem;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.grid {
+  display: grid;
+}
+
+.col1 {
+  grid-column: 1;
+}
+
+.col2 {
+  grid-column: 2;
+}
+
+.col1 .form_field {
+  margin-right: 1rem;
+}
+.col2 .form_field {
+  margin-left: 1rem;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
