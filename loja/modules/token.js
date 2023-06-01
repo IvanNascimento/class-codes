@@ -62,7 +62,7 @@ async function verifyToken(req, res, next) {
     } else {
       res.status(401).send({
         message: "Error",
-        datail: "expired token",
+        datail: "invalid token",
         extra: "Login to continue",
       });
     }
