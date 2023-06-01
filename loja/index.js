@@ -133,14 +133,14 @@ try {
   };
   https.createServer(HTTPSOptions, httpsServer).listen(PORT, HOST);
   console.log(`HTTPS Server running on https://${HOST}:${PORT}`);
+
+  httpServer.listen(80, HOST, () => {
+    console.log("HTTP Redirect server listening");
+  });
 } catch (e) {
   console.log(e);
   // HTTP
   httpsServer.listen(PORT, HOST, () => {
     console.log(`HTTP Server running on http://${HOST}:${PORT}`);
-  });
-} finally {
-  httpServer.listen(80, HOST, () => {
-    console.log("HTTP Redirect server listening");
   });
 }
