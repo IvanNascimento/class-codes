@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="node_modules\angular\angular.min.js" charset="utf-8"></script>
-    <script src="https://webdev-ifpb.appspot.com/script.js" charset="utf-8"></script>
+    <script src="https://backendserver/script.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="MainCtrl as c">
@@ -18,7 +18,7 @@
     </form>
 
     <img ng-repeat="id in c.info.images"
-    ng-src="https://backend-dot-webdev-ifpb.appspot.com/img/{{id}}";
+    ng-src="https://backendserver/img/{{id}}";
     height=20% width=20% ></img>
 
   </body>
