@@ -1,2 +1,0 @@
-códigos.aleatórios.UtilitariaPrimo
-códigos.aleatórios.SwitchExample
