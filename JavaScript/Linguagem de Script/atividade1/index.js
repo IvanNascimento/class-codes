@@ -1,5 +1,5 @@
 /**
- * Dado o comprimento da lateral retorna a área do quadrado
+ * Dado o comprimento da lateral, retorna a área do quadrado
  * @param {number} lado - Comprimento da lateral
  * @returns Área do quadrado
  */
@@ -10,7 +10,7 @@ function Q1(lado) {
 }
 
 /**
- * Dado o comprimento da lateral retorna o perímetro do quadrado
+ * Dado o comprimento da lateral, retorna o perímetro do quadrado
  * @param {number} lado - Comprimento da lateral
  * @returns Perímetro do quadrado
  */
@@ -21,7 +21,7 @@ function Q2(lado) {
 }
 
 /**
- * Dado o comprimento e largura retorna o perímetro do retângulo
+ * Dado o comprimento e largura, retorna o perímetro do retângulo
  * @param {number} comprimento - Comprimento do retângulo
  * @param {number} largura - Largura do retângulo
  * @returns Perímetro do retângulo
@@ -33,7 +33,7 @@ function Q3(comprimento, largura) {
 }
 
 /**
- * Dado o comprimento e largura retorna a área do retângulo
+ * Dado o comprimento e largura, retorna a área do retângulo
  * @param {number} comprimento - Comprimento do retângulo
  * @param {number} largura - Largura do retângulo
  * @returns Área do retângulo
@@ -45,10 +45,9 @@ function Q4(comprimento, largura) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
+ * Dado o número de galinhas, retorna a quantidade de dedos
  * @param {number} galinhas - quantidade de galinhas
- * @returns Área do retângulo
+ * @returns Quantidade de dedos
  */
 function Q5(galinhas) {
   let result = galinhas * 2 * 4;
@@ -57,10 +56,9 @@ function Q5(galinhas) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
+ * Dado o número de vacas, retorna a quantidade de leite
  * @param {number} vacas - quantidade de galinhas
- * @returns Área do retângulo
+ * @returns Leite diário
  */
 function Q6(vacas) {
   let result = vacas * 4 * 5;
@@ -69,23 +67,16 @@ function Q6(vacas) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} x - quantidade de galinhas
- * @param {number} y - quantidade de galinhas
- * @returns Área do retângulo
+ * Troca a valor de duas variáveis
+ * @param {number} x - variável X
+ * @param {number} y - variável Y
+ * @returns Um Json com as variáveis trocadas
  */
 function Q7(x, y) {
-  console.log(`
-  \n ===== Entrada =====
-  \n X: ${x}
-  \n Y: ${y}
-  `);
   x += y;
   y = x - y;
   x = x - y;
   console.log(`
-  \n ===== Saída =====
   \n X: ${x}
   \n Y: ${y}
   `);
@@ -93,10 +84,9 @@ function Q7(x, y) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} vacas - quantidade de galinhas
- * @returns Área do retângulo
+ * Dado a quantidade de vacas, retorna a quantidade de garrafas necessárias todos os dias
+ * @param {number} vacas - quantidade de vacas
+ * @returns Quantidade de garrafas
  */
 function Q8(vacas) {
   let result = Math.ceil(Q6(vacas) / 2);
@@ -105,23 +95,22 @@ function Q8(vacas) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} vacas - quantidade de galinhas
- * @returns Área do retângulo
+ * Dado a quantidade de vacas, retorna a receita da venda de garrafas
+ * @param {number} vacas - quantidade de vacas
+ * @returns Receita obtida
  */
 function Q9(vacas) {
   let result = Q8(vacas) * 3.0;
-  console.log(`Lucro: ${result.toFixed(2)}`);
+  console.log(`Receita: ${result.toFixed(2)}`);
   return result;
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} vacas - quantidade de galinhas
- * @param {number} garrafas - quantidade de galinhas
- * @returns Área do retângulo
+ * Dado a quantidade de vacas, retorna a receita da venda de garrafas
+ * Se a qunatidade de garrafas compradas for maior que 10, retorna a receita com desconto
+ * @param {number} vacas - quantidade de vacas
+ * @param {number} garrafas - quantidade de garrafas
+ * @returns Receita obtida
  */
 function Q10(vacas, garrafas) {
   let lucro = Q9(vacas);
@@ -133,24 +122,22 @@ function Q10(vacas, garrafas) {
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} peso - quantidade de galinhas
- * @param {number} altura - quantidade de galinhas
- * @returns Área do retângulo
+ * Dados peso e altura, retorna o IMC do paciente
+ * @param {number} peso - peso do paciente
+ * @param {number} altura - altura do paciente
+ * @returns IMC do paciente
  */
 function Q11(peso, altura) {
   let result = peso / altura ** 2;
-  console.log(`IMC: ${result}`);
+  console.log(`IMC: ${result.toFixed(3)}`);
   return result;
 }
 
 /**
- * TODO att descrição
- * Dado o número retorna a área do retângulo
- * @param {number} anterior - quantidade de galinhas
- * @param {number} atual - quantidade de galinhas
- * @returns Área do retângulo
+ * Dadas as leituras de kWh, retorna os dados da conta de energia
+ * @param {number} anterior - kWh da leitura anterior
+ * @param {number} atual - kWh da leitura atual
+ * @returns Valores da conta de luz
  */
 function Q12(anterior, atual) {
   const ilu = 15.78;
@@ -167,8 +154,10 @@ function Q12(anterior, atual) {
   let consumo = atual - anterior;
   let consumoP = consumo * precokwh;
 
-  console.log(`
-  \n Total: R$ ${(consumoP + ilu + vermelha + multa + mora).toFixed(2)}
+  console.log(` Total: R$ ${(consumoP + ilu + vermelha + multa + mora).toFixed(
+    2
+  )}
+  \n Consumo Elétrico: ${consumo} kWh
   \n Consumo: R$ ${consumoP.toFixed(2)}
   \n Bandeira Vermelha: R$ ${vermelha.toFixed(2)} 
   \n Iluminação Pública: R$ ${ilu.toFixed(2)}
@@ -186,7 +175,8 @@ function Q12(anterior, atual) {
 
   return {
     total: (consumoP + ilu + vermelha + multa + mora).toFixed(2),
-    consumo: consumoP.toFixed(2),
+    consumo: consumo,
+    consumoP: consumoP.toFixed(2),
     bandeira: vermelha.toFixed(2),
     iluminacao: ilu.toFixed(2),
     juros: mora.toFixed(2),
@@ -205,3 +195,5 @@ function Q12(anterior, atual) {
     },
   };
 }
+
+module.exports = { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12 };
