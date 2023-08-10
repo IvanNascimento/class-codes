@@ -1,8 +1,10 @@
 const questoes = require("./index");
 
+let input, input2;
+
 console.log(`===== Questão 1: Inicio =====`);
 console.log();
-let input = 4;
+input = 4;
 console.log(`----> Entrada `);
 console.log(`Comprimenta do quadrado : ${input}`);
 console.log();
@@ -27,7 +29,7 @@ console.log(`-----------------------------`);
 
 console.log(`===== Questão 3: Inicio =====`);
 input = 3;
-let input2 = 5;
+input2 = 5;
 console.log(`----> Entrada `);
 console.log(`Comprimenta do retângulo : ${input}`);
 console.log(`largura do retângulo : ${input}`);
