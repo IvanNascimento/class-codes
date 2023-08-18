@@ -10,5 +10,5 @@
     '+'       open a disk file for updating (reading and writing)
 '''
 
-f = open('historico.txt', 'a+')
+f = open('historico.log', 'a+')
 print('teste', file=f)
