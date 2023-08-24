@@ -1,5 +1,16 @@
 body {
-  display: inline-block;
-  justify-content: center;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   align-content: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 50%;
+  height: 2rem;
 }
