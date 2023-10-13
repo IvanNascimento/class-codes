@@ -4,6 +4,8 @@ int display1[7] = {40, 41, 43, 44, 42, 45, 46};
 int display4[7] = {33, 34, 35, 36, 37, 38, 39};
 int display3[7] = {26, 27, 28, 29, 30, 31, 32};
 
+int teclado[8] = {A0, A1, A2, A3, A4, A5, A6, A7};
+
 // Numeros
 // 0 - 9
 int nums[10][7] = {
@@ -38,6 +40,7 @@ void setup()
 {
   // Serial
   Serial.begin(9600);
+
   // Displays
   for (int i = 0; i < 7; i++)
   {
@@ -46,15 +49,19 @@ void setup()
     pinMode(display3[i], OUTPUT);
     pinMode(display4[i], OUTPUT);
   }
+
   // Botões
   pinMode(btn1, INPUT_PULLUP);
   pinMode(btn2, INPUT_PULLUP);
+
   // Sirene
   pinMode(srn1, OUTPUT);
   pinMode(srn2, OUTPUT);
+
   // Desligando as sirenes
   digitalWrite(srn1, HIGH);
   digitalWrite(srn2, HIGH);
+
   // Setando display para 0
   mostrar(display1, 0);
   mostrar(display2, 0);
@@ -67,12 +74,10 @@ void loop()
   if (digitalRead(btn1) == LOW)
   {
     pri();
-    addpontoSerial();
   }
   if (digitalRead(btn2) == LOW)
   {
     seg();
-    addpontoSerial();
   }
 }
 
@@ -84,6 +89,7 @@ void aplicar(int dis[7], int dis2[7])
     digitalWrite(dis[i], dis2[i]);
   }
 }
+
 // Pontuação
 // 1 - Primeiro Jogador
 // N != 1 - Segundo Jogador
@@ -131,6 +137,7 @@ void pri()
   delay(1000);
   digitalWrite(srn1, HIGH);
 }
+
 // Segundo Botão
 void seg()
 {
@@ -158,5 +165,12 @@ void addpontoSerial()
   {
     pnt2 += String(String(tempString[2]) + String(tempString[3])).toInt();
     pontuacao(2);
+  }
+}
+
+void lerTeclado()
+{
+  for(int i = 0; i < 8;i++) {
+    
   }
 }
