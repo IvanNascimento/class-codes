@@ -11,7 +11,7 @@ def dobro(numero: int) -> int:
 # Questão 3
 def saudacao_personalizada(nome: str, idioma="inglês") -> str:
     match (idioma):
-        case "portuges":
+        case "portugues":
             return f"Olá, {nome}!"
         case "espanhol":
             return f"Hola, {nome}!"
@@ -88,34 +88,79 @@ def sum_custom(entrada: list[float]) -> float:
 
 # Questão 14
 def max_custom(entrada: list[float]) -> float:
-    return
+    if len(entrada) == 0:
+        return
+    max = float("-inf")
+    for i in entrada:
+        if i > max:
+            max = i
+    return max
 
 
 # Questão 15
 def min_custom(entrada: list[float]) -> float:
-    return
+    if len(entrada) == 0:
+        return
+    min = float("inf")
+    for i in entrada:
+        if i < min:
+            min = i
+    return min
 
 
 # Questão 16
 def startswith_custom(entrada: str, pre: str) -> bool:
-    return
+    if entrada[0 : len(pre)] == pre:
+        return True
+    return False
 
 
 # Questão 17
-def endswith_custom(entrada: str, pre: str) -> bool:
-    return
+def endswith_custom(entrada: str, pos: str) -> bool:
+    if entrada[len(pos) * -1 :] == pos:
+        return True
+    return False
 
 
 # Questão 18
-def split_custom(entrada: str, char: str) -> list[str]:
-    return
+def split_custom(entrada: str, char: str) -> list:
+    saida = []
+    separar = []
+    __temp = len(char)
+    __temp2 = len(entrada)
+    for i in range(__temp2 - __temp):
+        if entrada[i : i + __temp] == char:
+            separar.append((i, i + __temp))
+    ultimo = (0, 0)
+    for i in separar:
+        saida.append(entrada[ultimo[1] : i[0]])
+        ultimo = i
+    saida.append(entrada[ultimo[1] :])
+    return saida
 
 
 # Questão 19
-def strip_custom(entrada: list[float]) -> float:
-    return
+def strip_custom(entrada: str, remover=" ") -> str:
+    saida = ""
+    for i in entrada:
+        if i != remover:
+            saida += i
+    return saida
 
 
 # Questão 20
-def replace_custom(entrada: list[float]) -> float:
-    return
+def replace_custom(entrada: str, substr: str, nova_substr: str) -> str:
+    saida = ""
+    __temp = len(substr)
+    i = 0
+    while i < len(entrada):
+        if entrada[i : i + __temp] == substr:
+            saida += nova_substr
+            if __temp != 1:
+                i += __temp
+            else:
+                i += 1
+        else:
+            saida += entrada[i]
+            i += 1
+    return saida

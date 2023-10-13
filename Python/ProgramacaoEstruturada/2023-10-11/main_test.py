@@ -1,5 +1,5 @@
-from main import *
 import pytest
+from main import *
 
 
 # Teste para a função saudacao
