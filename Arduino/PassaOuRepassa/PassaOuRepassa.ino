@@ -1,3 +1,5 @@
+#include <Keypad.h>
+
 // Displays A ,B , C, D, E, F, G
 int display2[7] = {47, 48, 49, 50, 51, 52, 53};
 int display1[7] = {40, 41, 43, 44, 42, 45, 46};
@@ -8,7 +10,7 @@ int teclado[8] = {A0, A1, A2, A3, A4, A5, A6, A7};
 
 // Numeros
 // 0 - 9
-int nums[10][7] = {
+const int nums[10][7] = {
     {LOW, LOW, LOW, LOW, LOW, LOW, HIGH},
     {HIGH, LOW, LOW, HIGH, HIGH, HIGH, HIGH},
     {LOW, LOW, HIGH, LOW, LOW, HIGH, LOW},
@@ -19,6 +21,15 @@ int nums[10][7] = {
     {LOW, LOW, LOW, HIGH, HIGH, HIGH, HIGH},
     {LOW, LOW, LOW, LOW, LOW, LOW, LOW},
     {LOW, LOW, LOW, HIGH, HIGH, LOW, LOW}};
+
+const int teclado_matrix[4][4] = {
+    {'1', '2', '3', 'A'},
+    {'4', '5', '6', 'B'},
+    {'7', '8', '9', 'C'},
+    {'*', '0', '#', 'D'}};
+
+const int linhas[4] = {9, 10, 11, 12};
+const int colunas[4] = {5, 6, 7, 8};
 
 // Pontos
 int pnt1 = 0;
@@ -35,6 +46,9 @@ int srn2 = 12;
 // Temp Vars
 String tempString = "";
 int tempInt = 0;
+char tecla = '';
+
+Keypad teclado = Keypad(makekeymap(teclado_matrix), linhas, colunas, 4, 4);
 
 void setup()
 {
@@ -78,6 +92,11 @@ void loop()
   if (digitalRead(btn2) == LOW)
   {
     seg();
+  }
+  tecla = tecla.getKey();
+  if (tecla != '')
+  {
+    Serial.println(tecla);
   }
 }
 
