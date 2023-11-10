@@ -96,3 +96,14 @@ def idades() -> None:
     print(f"Soma das idades: {soma:,}")
     print(f"Média de idades: {media:,.2f}")
     print(f"Pessoa mais velha: {mais_velha}")
+
+
+# Questão 8
+def soma_tuplas(lista: List[tuple]) -> None:
+    saida = []
+    for tupla in lista:
+        temp = 0
+        for i in tupla:
+            temp += i
+        saida.append(temp)
+    return saida
