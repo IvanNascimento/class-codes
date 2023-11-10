@@ -1,7 +1,11 @@
 {
   "python.testing.pytestArgs": [
-    "2023-10-11"
+    "aula-07"
   ],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "cSpell.enableFiletypes": [
+    "python"
+  ],
+  "cSpell.language": "en,pt,pt-BR"
 }
