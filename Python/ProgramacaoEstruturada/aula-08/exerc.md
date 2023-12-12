@@ -69,3 +69,63 @@ Lista original de tuplas:
 Soma de todos os elementos de cada tupla armazenada dentro da mencionada lista de tuplas:
 
 [9, -1, 7, 8]
+
+9 - Problema: Compra e Venda de Ações
+Você recebe uma lista prices onde prices[i] é o preço de uma determinada ação no dia i. Você deseja maximizar seu lucro escolhendo um dia para comprar uma ação e escolhendo um dia diferente no futuro para vender essa ação. Retorne o lucro máximo que você pode obter com essa transação. Se não for possível obter lucro algum, retorne 0.
+
+
+Exemplo 1:
+
+Entrada: prices = [7,1,5,3,6,4]
+
+Saída: 5
+
+Explicação: Compre no dia 2 (preço = 1) e venda no dia 5 (preço = 6), lucro = 6-1 = 5. Observe que comprar no dia 2 e vender no dia 1 não é permitido, pois você deve comprar antes de vender.
+
+Exemplo 2:
+
+Entrada: prices = [7,6,4,3,1]
+
+Saída: 0
+
+Explicação: Neste caso, nenhuma transação é realizada e o lucro máximo é 0.
+
+10 - Você recebe um número inteiro grande representado como um array de inteiros chamado 'digits', onde cada 'digits[i]' é o i-ésimo dígito do número. Os dígitos são ordenados do dígito mais significativo para o menos significativo na ordem da esquerda para a direita. O número inteiro grande não contém zeros à esquerda.
+
+Incremente o número inteiro grande em um e retorne o array resultante de dígitos.
+
+Exemplo 1:
+
+Entrada: digits = [1,2,3]
+Saída: [1,2,4]
+Explicação: O array representa o número 123. Incrementar um resulta em 123 + 1 = 124. Portanto, o resultado deve ser [1,2,4].
+
+Exemplo 2:
+
+Entrada: digits = [4,3,2,1]
+Saída: [4,3,2,2]
+Explicação: O array representa o número 4321. Incrementar um resulta em 4321 + 1 = 4322. Portanto, o resultado deve ser [4,3,2,2].
+
+Exemplo 3:
+
+Entrada: digits = [9]
+Saída: [1,0]
+Explicação: O array representa o número 9. Incrementar um resulta em 9 + 1 = 10. Portanto, o resultado deve ser [1,0].
+
+11 - Dado o nó inicial de uma lista ligada ordenada, exclua todos os duplicados de forma que cada elemento apareça apenas uma vez. Retorne a lista ligada também ordenada.
+
+Exemplo: 
+
+Input: head = [1,1,2]
+
+Output: [1,2]
+
+![Imagem](https://assets.leetcode.com/uploads/2021/01/04/list1.jpg)
+
+
+Exemplo:
+
+![Imagem](https://assets.leetcode.com/uploads/2021/01/04/list2.jpg)
+
+Input: head = [1,1,2,3,3]
+Output: [1,2,3]
