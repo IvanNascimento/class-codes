@@ -107,3 +107,10 @@ def soma_tuplas(lista: List[tuple]) -> None:
             temp += i
         saida.append(temp)
     return saida
+
+
+# Questão 9
+
+# Questão 10
+
+# Questão 11
