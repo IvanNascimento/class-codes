@@ -1,18 +1,15 @@
-## Getting Started
+# Instruções
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Utilizando o exemplo da calculadora desenvolvido em sala de aula, altere ela para exibir no console um menu textual como o seguinte:
 
-## Folder Structure
+0. Sair
+1. Soma
+2. Subtração
+3. Multiplicação
+4. Divisão
 
-The workspace contains two folders by default, where:
+O usuário deve ser capaz de digitar no teclado um dos números escolhendo qual das opções gostaria de executar, após isso o programa deve pedir para ser digitado os valores 1 e 2 que serão utilizados na operação aritmética e logo em seguida mostrar o resultado.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Após mostrar o resultado o programa deverá mostrar novamente o menu textual inicial, onde o usuário poderá escolher uma nova operação.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Dica: Você irá precisar utilizar as seguintes estruturas de controle: estruturas condicionais e de repetição.

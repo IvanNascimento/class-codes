@@ -1,4 +1,4 @@
-package code;
+package common;
 
 public class Printer {
 
@@ -14,6 +14,14 @@ public class Printer {
     System.out.print(String.format(format, out));
   }
 
+  public static void l(int out) {
+    System.out.print(String.format("%d", out));
+  }
+
+  public static void l(int out, String format) {
+    System.out.print(String.format(format, out));
+  }
+
   public static void ln(String out) {
     System.out.println(out);
   }
@@ -23,6 +31,14 @@ public class Printer {
   }
 
   public static void ln(double out, String format) {
+    System.out.println(String.format(format, out));
+  }
+
+  public static void ln(int out) {
+    System.out.println(String.format("%d", out));
+  }
+
+  public static void ln(int out, String format) {
     System.out.println(String.format(format, out));
   }
 

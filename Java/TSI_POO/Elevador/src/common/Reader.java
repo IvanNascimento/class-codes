@@ -1,4 +1,4 @@
-package code;
+package common;
 
 import java.util.Scanner;
 
@@ -6,7 +6,15 @@ public abstract class Reader {
   private final static Scanner sc = new Scanner(System.in, "UTF-8");
 
   public static String getString() {
-    return sc.nextLine();
+    do {
+      try {
+        return sc.nextLine();
+      } catch (Error err) {
+        Printer.ln("--- ERROR ---");
+        Printer.ln(err.toString());
+        sc.nextLine();
+      }
+    } while (true);
   }
 
   public static int getInt() {
